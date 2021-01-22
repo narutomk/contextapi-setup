@@ -1,5 +1,6 @@
 import "./App.css";
 import { useStateValue } from "./StateProvider";
+import TestComponents from "./TestComponents";
 
 function App() {
   //  how we access to the counter
@@ -7,6 +8,7 @@ function App() {
 
   return (
     <div>
+      <TestComponents />
       <h1> let's try the Context Api</h1>
       <button
         onClick={(e) => {
