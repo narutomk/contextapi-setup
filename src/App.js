@@ -25,6 +25,14 @@ function App() {
       >
         +
       </button>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          dispatch({ type: "INCREMENT_AMOUNT_COUNTER", payload: 20 });
+        }}
+      >
+        +20
+      </button>
       <p>reset</p>{" "}
       <button
         onClick={(e) => {

@@ -15,6 +15,8 @@ const reducer = (state, action) => {
       return { ...state, counter: state.counter - 1 };
     case "RESET_COUNTER":
       return { ...state, counter: 0 };
+    case "INCREMENT_AMOUNT_COUNTER":
+      return { ...state, counter: state.counter + action.payload };
     default:
       return state;
   }
