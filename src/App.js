@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useStateValue } from "./StateProvider";
 
 function App() {
+  //  how we access to the counter
+  const [{ counter }, dispatch] = useStateValue();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1> let's try the Context Api</h1>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          dispatch({ type: "DECREMENT_COUNTER" });
+        }}
+      >
+        -
+      </button>
+      {counter}
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          dispatch({ type: "INCREMENT_COUNTER" });
+        }}
+      >
+        +
+      </button>
+      <p>reset</p>{" "}
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          dispatch({ type: "RESET_COUNTER" });
+        }}
+      >
+        RESET
+      </button>
     </div>
   );
 }
